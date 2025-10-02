@@ -23,6 +23,7 @@ The app is clean, testable, modular, and extensible — built using Java SE and 
 
 
 🧠 Class Responsibilities
+
 🔹 Employee.java
 
 Represents an employee with attributes like ID, name, salary, manager.
@@ -79,7 +80,7 @@ Triggers the analysis process and prints results.
 
 ✅ Sample Output
 
-When you run the app with a sample CSV file:
+When you run the app with a sample CSV file employees.csv you will the below output, I have tweaked the output in more readable form:
 
 === Managers earning TOO LITTLE ===
 Manager Martin Chekov earns TOO LITTLE by 15000.00
