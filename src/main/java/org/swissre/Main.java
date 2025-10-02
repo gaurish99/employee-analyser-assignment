@@ -1,11 +1,11 @@
 package org.swissre;
 
 import org.swissre.model.Employee;
-import org.swissre.service.EmployeeAnalyzer;
+import org.swissre.service.EmployeeAnalyzerService;
 import org.swissre.util.CSVReader;
-import org.swissre.validator.EmployeeReportingLineRule;
-import org.swissre.validator.SalaryValidationService;
-import org.swissre.validator.ValidationRule;
+import org.swissre.validator.EmployeeReportingLineRules;
+import org.swissre.validator.SalaryValidationRules;
+import org.swissre.validator.ValidationRules;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,12 +24,12 @@ public class Main {
         try {
             Map<String, Employee> employeeMap = CSVReader.readEmployees(filePath);
 
-            List<ValidationRule> rules = List.of(
-                    new SalaryValidationService(),
-                    new EmployeeReportingLineRule()
+            List<ValidationRules> rules = List.of(
+                    new SalaryValidationRules(),
+                    new EmployeeReportingLineRules()
             );
 
-            EmployeeAnalyzer analyzer = new EmployeeAnalyzer(rules);
+            EmployeeAnalyzerService analyzer = new EmployeeAnalyzerService(rules);
             analyzer.analyze(employeeMap.values());
 
         } catch (IOException e) {

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Rule: Employee more than 4 levels deep in Reporting Line from CEO Should be Highlighted with depth (By How Much).
  */
-public class EmployeeReportingLineRule implements ValidationRule {
+public class EmployeeReportingLineRules implements ValidationRules {
 
     @Override
     public List<ValidationResult> validate(Employee employee) {

@@ -1,26 +1,23 @@
 package org.swissre.service;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.swissre.model.Employee;
 import org.swissre.util.CSVReader;
 import org.swissre.util.ValidationResult;
-import org.swissre.validator.EmployeeReportingLineRule;
-import org.swissre.validator.SalaryValidationService;
+import org.swissre.validator.EmployeeReportingLineRules;
+import org.swissre.validator.SalaryValidationRules;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class EmployeeAnalyzerTest {
+public class EmployeeAnalyzerServiceTest {
 
     Map<String, Employee> employeeMap = CSVReader.readEmployees("data/employees.csv");
 
-    public EmployeeAnalyzerTest() throws IOException {
+    public EmployeeAnalyzerServiceTest() throws IOException {
     }
 
 
@@ -34,7 +31,7 @@ public class EmployeeAnalyzerTest {
 
     @Test
     public void testDepthValidation_tooDeep() {
-        EmployeeReportingLineRule depthRule = new EmployeeReportingLineRule();
+        EmployeeReportingLineRules depthRule = new EmployeeReportingLineRules();
 
         // Ram Singh should be too deep (5 levels from CEO)
         Employee ram = employeeMap.get("500");
@@ -46,7 +43,7 @@ public class EmployeeAnalyzerTest {
 
     @Test
     public void testSalaryValidation_tooLittle() {
-        SalaryValidationService salaryRule = new SalaryValidationService();
+        SalaryValidationRules salaryRule = new SalaryValidationRules();
 
         // Martin Chekov should earn too little
         Employee martin = employeeMap.get("124");

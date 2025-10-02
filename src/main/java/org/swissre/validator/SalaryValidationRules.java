@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Rule: Manager must earn more than 20% and less than equal to 50% more than average of direct subordinates.
  */
-public class SalaryValidationService implements ValidationRule {
+public class SalaryValidationRules implements ValidationRules {
 
     @Override
     public List<ValidationResult> validate(Employee manager) {

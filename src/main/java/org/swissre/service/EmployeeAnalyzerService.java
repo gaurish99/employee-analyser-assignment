@@ -3,7 +3,7 @@ package org.swissre.service;
 
 import org.swissre.model.Employee;
 import org.swissre.util.ValidationResult;
-import org.swissre.validator.ValidationRule;
+import org.swissre.validator.ValidationRules;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class EmployeeAnalyzer {
-    private final List<ValidationRule> rules;
+public class EmployeeAnalyzerService {
+    private final List<ValidationRules> rules;
 
-    public EmployeeAnalyzer(List<ValidationRule> rules) {
+    public EmployeeAnalyzerService(List<ValidationRules> rules) {
         this.rules = rules;
     }
 
@@ -22,7 +22,7 @@ public class EmployeeAnalyzer {
         List<ValidationResult> allResults = new ArrayList<>();
 
         for (Employee emp : employees) {
-            for (ValidationRule rule : rules) {
+            for (ValidationRules rule : rules) {
                 allResults.addAll(rule.validate(emp));
             }
         }
