@@ -13,6 +13,8 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
+//The test cases are written specific to current employees.csv file and change to the CSV file will result in failure.
+
 public class EmployeeAnalyzerServiceTest {
 
     Map<String, Employee> employeeMap = CSVReader.readEmployees("data/employees.csv");
