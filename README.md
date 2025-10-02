@@ -1,7 +1,7 @@
 👨‍💼 Employee Analyzer
 📋 Overview
 
-Employee Analyzer is a simple Java application designed to analyze an organization's structure by evaluating salary fairness and organizational depth. It reads employee data from a CSV file and applies business validation rules such as:
+Employee Analyzer(I named it as do analysis in employess accoring to specfic rules) is a simple Java application designed to analyze an organization's structure by evaluating salary fairness and organizational depth. It reads employee data from a CSV file and applies business validation rules such as:
 
 Ensuring managers are paid fairly compared to their direct subordinates.
 
